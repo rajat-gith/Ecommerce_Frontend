@@ -13,6 +13,7 @@ function HomeScreen() {
 
   useEffect(() => {
     dispatch(listProducts());
+    console.log(Object.entries(products));
   }, [dispatch]);
 
   return (
@@ -24,7 +25,7 @@ function HomeScreen() {
         <Message variant="danger">{error}</Message>
       ) : (
         <Row>
-          {products.map((product) => (
+          {Object.entries(products).map((product) => (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
               <Product product={product} />
             </Col>
