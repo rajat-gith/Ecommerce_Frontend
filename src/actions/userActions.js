@@ -33,7 +33,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/users/login/",
+      "http://backendrajat.pythonanywhere.com/api/users/login/",
       { username: email, password: password },
       config
     );
@@ -75,7 +75,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/users/register/",
+      "http://backendrajat.pythonanywhere.com/api/users/register/",
       { name: name, email: email, password: password },
       config
     );
@@ -119,7 +119,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/users/${id}/`, config);
+    const { data } = await axios.get(`http://backendrajat.pythonanywhere.com/api/users/${id}/`, config);
 
     dispatch({
       type: USER_DETAILS_SUCCESS,
@@ -154,7 +154,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `/api/users/profile/update/`,
+      `http://backendrajat.pythonanywhere.com/api/users/profile/update/`,
       user,
       config
     );
