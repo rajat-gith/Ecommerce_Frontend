@@ -14,8 +14,16 @@ import {
 export const listProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    };
 
-    const { data } = await axios.get(`http://backendrajat.pythonanywhere.com/ap/products/`);
+    const { data } = await axios.get(
+      `http://backendrajat.pythonanywhere.com/ap/products/`,
+      config
+    );
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
@@ -36,7 +44,9 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`http://backendrajat.pythonanywhere.com/api/products/${id}`);
+    const { data } = await axios.get(
+      `http://backendrajat.pythonanywhere.com/api/products/${id}`
+    );
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
