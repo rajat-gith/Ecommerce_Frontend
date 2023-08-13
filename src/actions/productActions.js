@@ -21,7 +21,7 @@ export const listProducts = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      `https://backendrajat.pythonanywhere.com/api/products/`
+      `https://backendrajatv.pythonanywhere.com/api/products/`
     );
 
     dispatch({
@@ -44,7 +44,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
     const { data } = await axios.get(
-      `http://backendrajat.pythonanywhere.com/api/products/${id}`
+      `http://backendrajatv.pythonanywhere.com/api/products/${id}`
     );
 
     dispatch({

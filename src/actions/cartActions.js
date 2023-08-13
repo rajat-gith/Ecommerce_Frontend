@@ -8,7 +8,7 @@ import {
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
   const { data } = await axios.get(
-    `http://backendrajat.pythonanywhere.com/api/products/${id}`
+    `http://backendrajatv.pythonanywhere.com/api/products/${id}`
   );
 
   dispatch({
