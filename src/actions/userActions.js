@@ -26,9 +26,7 @@ export const login = (email, password) => async (dispatch) => {
 
     const config = {
       headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
+        Accept: "application/json",
       },
     };
 
@@ -119,7 +117,10 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`http://backendrajatv.pythonanywhere.com/api/users/${id}/`, config);
+    const { data } = await axios.get(
+      `http://backendrajatv.pythonanywhere.com/api/users/${id}/`,
+      config
+    );
 
     dispatch({
       type: USER_DETAILS_SUCCESS,
